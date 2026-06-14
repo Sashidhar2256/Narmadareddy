@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Lakshmi Narmada Jadda, Computer Science Engineering student focused on Java, Python, AI, deep learning, NLP, and application development.">
+<title>Lakshmi Narmada Jadda | Graduate Engineer Trainee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#071015;
+  --panel:#0d1a22;
+  --panel2:#122631;
+  --ink:#f7fbff;
+  --text:#c5d4dc;
+  --muted:#7f96a3;
+  --line:rgba(145,205,218,.18);
+  --cyan:#50d9e8;
+  --mint:#6ee7b7;
+  --gold:#f7c948;
+  --coral:#ff8a7a;
+  --violet:#b69cff;
+  --shadow:0 24px 80px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(80,217,232,.14),transparent 28%),
+    radial-gradient(circle at 85% 18%,rgba(110,231,183,.1),transparent 24%),
+    linear-gradient(180deg,#071015 0%,#09141a 48%,#061015 100%);
+  color:var(--text);
+  font-family:Inter,system-ui,sans-serif;
+  line-height:1.65;
+}
+a{color:inherit}
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:0 6%;
+  background:rgba(7,16,21,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.brand{font-weight:800;color:var(--ink);letter-spacing:.02em}
+.brand span{color:var(--cyan)}
+.navlinks{display:flex;gap:24px;list-style:none}
+.navlinks a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:700}
+.navlinks a:hover{color:var(--cyan)}
+.hero{
+  min-height:calc(100vh - 64px);
+  display:grid;
+  place-items:center;
+  padding:72px 6% 56px;
+}
+.hero-grid{
+  width:min(1120px,100%);
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:56px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 13px;
+  border:1px solid rgba(80,217,232,.3);
+  border-radius:999px;
+  color:var(--cyan);
+  font:700 12px/1 JetBrains Mono,monospace;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  background:rgba(80,217,232,.07);
+  margin-bottom:24px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px rgba(110,231,183,.8)}
+h1{
+  color:var(--ink);
+  font-size:clamp(46px,7vw,88px);
+  line-height:.96;
+  letter-spacing:-.04em;
+  margin-bottom:18px;
+}
+.accent{background:linear-gradient(135deg,var(--cyan),var(--mint) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{
+  color:var(--gold);
+  font:700 14px/1.5 JetBrains Mono,monospace;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:24px;
+}
+.lead{max-width:650px;font-size:18px;color:#d7e5eb;margin-bottom:34px}
+.lead strong{color:var(--cyan)}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  border-radius:8px;
+  padding:0 20px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid transparent;
+}
+.primary{background:linear-gradient(135deg,var(--cyan),var(--mint));color:#051014}
+.secondary{border-color:rgba(80,217,232,.34);color:var(--cyan);background:rgba(80,217,232,.06)}
+.visual{
+  border:1px solid rgba(80,217,232,.22);
+  background:linear-gradient(180deg,rgba(18,38,49,.92),rgba(9,20,26,.94));
+  border-radius:18px;
+  padding:26px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.visual:before{
+  content:"";
+  position:absolute;
+  inset:-40% -20% auto auto;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,rgba(80,217,232,.2),transparent 70%);
+}
+.screen{position:relative;border:1px solid var(--line);border-radius:14px;background:#08141a;padding:18px}
+.screen-top{display:flex;gap:7px;margin-bottom:18px}
+.screen-top i{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.signal{
+  height:118px;
+  border-radius:10px;
+  background:
+    linear-gradient(90deg,transparent 0 9%,rgba(80,217,232,.18) 9% 10%,transparent 10% 19%,rgba(110,231,183,.18) 19% 20%,transparent 20%),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;
+  align-items:end;
+  gap:8px;
+  padding:14px;
+}
+.signal span{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(80,217,232,.18))}
+.signal span:nth-child(2){height:44%}.signal span:nth-child(3){height:76%;background:linear-gradient(180deg,var(--mint),rgba(110,231,183,.18))}
+.signal span:nth-child(4){height:58%}.signal span:nth-child(5){height:88%;background:linear-gradient(180deg,var(--gold),rgba(247,201,72,.16))}
+.signal span:nth-child(6){height:64%}.signal span:nth-child(7){height:38%;background:linear-gradient(180deg,var(--violet),rgba(182,156,255,.18))}
+.signal span:nth-child(1){height:28%}.signal span:nth-child(8){height:72%}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.mini{border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:14px;background:rgba(255,255,255,.03)}
+.mini b{display:block;color:var(--ink);font-size:24px;line-height:1}
+.mini small{color:var(--muted);font-weight:700}
+.section{padding:86px 6%;border-top:1px solid var(--line)}
+.wrap{width:min(1120px,100%);margin:auto}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
+h2{color:var(--ink);font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:-.03em}
+.section-kicker{font:700 12px/1 JetBrains Mono,monospace;color:var(--cyan);text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:rgba(18,38,49,.74);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+}
+.card h3{color:var(--ink);font-size:18px;margin-bottom:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:700 12px/1 JetBrains Mono,monospace;color:#dff7fb;border:1px solid rgba(80,217,232,.24);background:rgba(80,217,232,.08);border-radius:6px;padding:7px 9px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.stat b{display:block;color:var(--ink);font-size:32px;line-height:1}
+.stat span{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.projects{display:grid;grid-template-columns:1fr;gap:18px}
+.project{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
+.project-meta{background:#07141b;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px}
+.meta-row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.07);padding:9px 0}
+.meta-row:last-child{border-bottom:0}
+.meta-row span{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase}
+.meta-row b{color:var(--ink);font-size:13px;text-align:right}
+.project ul,.timeline ul{padding-left:18px}
+.project li,.timeline li{margin:8px 0}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.link-list{display:grid;gap:12px}
+.contact-link{display:block;text-decoration:none;background:rgba(18,38,49,.74);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.contact-link span{display:block;color:var(--muted);font:700 11px/1 JetBrains Mono,monospace;text-transform:uppercase;margin-bottom:5px}
+.contact-link b{color:var(--ink);word-break:break-word}
+footer{padding:30px 6%;text-align:center;color:var(--muted);border-top:1px solid var(--line);font:700 12px/1.4 JetBrains Mono,monospace}
+@media(max-width:880px){
+  .navlinks{display:none}
+  .hero-grid,.project,.timeline,.contact{grid-template-columns:1fr}
+  .cards,.stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .cards,.stats{grid-template-columns:1fr}
+  .hero{padding-top:44px}
+  .visual{padding:18px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">Lakshmi Narmada <span>Jadda</span></div>
+  <ul class="navlinks">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Graduate Engineer Trainee Candidate</div>
+        <h1>Lakshmi Narmada <span class="accent">Jadda</span></h1>
+        <div class="role">Java · Python · AI / Deep Learning · NLP</div>
+        <p class="lead">Computer Science Engineering student with a strong foundation in <strong>Java</strong>, basic Python, and problem-solving, with hands-on work in AI-based applications, real-time emotion recognition, and sentiment analysis pipelines.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:jaddanarmadareddy@gmail.com">Contact Me</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/jadda-narmada-reddy-74a563352" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <aside class="visual" aria-label="AI project dashboard illustration">
+        <div class="screen">
+          <div class="screen-top"><i></i><i></i><i></i></div>
+          <div class="signal"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="mini-grid">
+            <div class="mini"><b>9.0</b><small>B.Tech CGPA</small></div>
+            <div class="mini"><b>3</b><small>AI Projects</small></div>
+            <div class="mini"><b>918</b><small>Intermediate</small></div>
+            <div class="mini"><b>599</b><small>School Score</small></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stats">
+      <div class="stat"><b>2026</b><span>CSE Graduate</span></div>
+      <div class="stat"><b>9.0</b><span>B.Tech CGPA</span></div>
+      <div class="stat"><b>3</b><span>AI Projects</span></div>
+      <div class="stat"><b>5+</b><span>Certifications</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Capabilities</div>
+          <h2>Technical Skills</h2>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Programming</h3>
+          <div class="chips">
+            <span class="chip">Java</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">OOP</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>AI & Data</h3>
+          <div class="chips">
+            <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">OpenCV</span><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Scikit-learn</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Core Concepts</h3>
+          <div class="chips">
+            <span class="chip">Deep Learning</span><span class="chip">Neural Networks</span><span class="chip">NLP</span><span class="chip">Sentiment Analysis</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Application Tools</h3>
+          <div class="chips">
+            <span class="chip">YouTube Data API</span><span class="chip">Pygame</span><span class="chip">FFmpeg</span><span class="chip">Webcam Input</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Soft Skills</h3>
+          <div class="chips">
+            <span class="chip">Communication</span><span class="chip">Leadership</span><span class="chip">Collaboration</span><span class="chip">Time Management</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Problem Solving</h3>
+          <div class="chips">
+            <span class="chip">Analytical Reasoning</span><span class="chip">Task Prioritization</span><span class="chip">Critical Thinking</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-kicker">Work Samples</div>
+      <h2>Project Experience</h2>
+      <div class="projects" style="margin-top:30px">
+        <article class="card project">
+          <div class="project-meta">
+            <div class="meta-row"><span>Domain</span><b>AI + Mental Health</b></div>
+            <div class="meta-row"><span>Stack</span><b>Python, OpenCV</b></div>
+            <div class="meta-row"><span>Tools</span><b>Pygame, FFmpeg</b></div>
+          </div>
+          <div>
+            <h3>AI Powered Stress Monitoring and Assistance Platform</h3>
+            <p>Built a real-time stress monitoring system for student mental health support by tracking user presence and triggering supportive actions during usage.</p>
+            <ul>
+              <li>Used Python and OpenCV to monitor user presence through webcam input.</li>
+              <li>Automated video/audio pause and resume behavior based on user activity.</li>
+              <li>Added alert generation and stress-relief game launch flows using Pygame and FFmpeg.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-meta">
+            <div class="meta-row"><span>Domain</span><b>Emotion AI</b></div>
+            <div class="meta-row"><span>Inputs</span><b>Webcam, Text</b></div>
+            <div class="meta-row"><span>Concepts</span><b>NN, NLP</b></div>
+          </div>
+          <div>
+            <h3>Emotion-Driven Interactive Game System</h3>
+            <p>Developed a real-time emotion recognition system that adapts gameplay behavior based on detected user emotion states.</p>
+            <ul>
+              <li>Used webcam input, neural networks, and NLP techniques to classify emotions such as happy, sad, and frustrated.</li>
+              <li>Dynamically adjusted game behavior, levels, and difficulty based on emotion classification.</li>
+              <li>Improved engagement by making the game respond to player state in real time.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-meta">
+            <div class="meta-row"><span>Domain</span><b>NLP</b></div>
+            <div class="meta-row"><span>Model</span><b>LSTM</b></div>
+            <div class="meta-row"><span>Metrics</span><b>Precision, Recall, F1</b></div>
+          </div>
+          <div>
+            <h3>YouTube Comment Sentiment Analyzer</h3>
+            <p>Created an end-to-end sentiment analysis pipeline for YouTube comments using deep learning and labeled datasets.</p>
+            <ul>
+              <li>Integrated the YouTube Data API to collect comment data for analysis.</li>
+              <li>Built an LSTM-based deep learning model for sentiment classification.</li>
+              <li>Measured model performance using precision, recall, and F1-score.</li>
+              <li>Proposed the system as an early-warning tool for social media monitoring.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="section-kicker">Background</div>
+      <h2>Education & Certifications</h2>
+      <div class="timeline" style="margin-top:30px">
+        <article class="card">
+          <h3>Education</h3>
+          <ul>
+            <li><strong>B.Tech, Computer Science and Engineering</strong>, Kalasalingam Academy of Research and Education, Tamil Nadu. 2022-2026. CGPA: 9.0/10.</li>
+            <li><strong>Intermediate, MPC</strong>, Vidwan Junior College, Andhra Pradesh. 2020-2022. Score: 918/1000.</li>
+            <li><strong>Secondary School Education</strong>, Geetham High School, Andhra Pradesh. 2019-2020. Score: 599/600.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Certifications & Activities</h3>
+          <ul>
+            <li>Python Internship - Youngminds Technology Solutions</li>
+            <li>AngularJS - Coursera</li>
+            <li>Poster Presentation - IBM</li>
+            <li>External Project Expo - Presented academic projects</li>
+            <li>TalentNext course on Java Full Stack</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div>
+        <div class="section-kicker">Reach Out</div>
+        <h2>Open to Graduate Engineer Trainee Roles</h2>
+        <p style="margin-top:18px;max-width:560px">Seeking an opportunity to apply technical skills in building efficient, scalable software solutions while contributing to real-world engineering challenges in a collaborative environment.</p>
+      </div>
+      <div class="link-list">
+        <a class="contact-link" href="mailto:jaddanarmadareddy@gmail.com"><span>Email</span><b>jaddanarmadareddy@gmail.com</b></a>
+        <a class="contact-link" href="tel:+918374753427"><span>Phone</span><b>+91 83747 53427</b></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/jadda-narmada-reddy-74a563352" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>jadda-narmada-reddy-74a563352</b></a>
+        <div class="contact-link"><span>Location</span><b>Palnadu, Andhra Pradesh</b></div>
+        <div class="contact-link"><span>Languages</span><b>English, Telugu</b></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Lakshmi Narmada Jadda · Computer Science Engineering · AI / Software Development</footer>
+</body>
+</html>
